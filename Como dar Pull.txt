@@ -1,0 +1,13 @@
+# 1️⃣ Clonar o repositório central com todos os submódulos
+git clone --recurse-submodules https://github.com/faesy/Fisio-Comp-Organiza-o-Pacientes.git
+
+# 2️⃣ Entrar na pasta
+cd Fisio-Comp-Organiza-o-Pacientes
+
+# 3️⃣ Atualizar e inicializar submódulos recursivamente (garantia)
+git submodule update --init --recursive
+
+# 4️⃣ Instalar e baixar os arquivos grandes do LFS (em todos os submódulos)
+git lfs install
+git lfs pull
+git submodule foreach 'git lfs install && git lfs pull'
