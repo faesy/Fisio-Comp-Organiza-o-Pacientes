@@ -1,3 +1,15 @@
 [submodule "Paciente 1"]
 	path = Paciente 1
 	url = https://github.com/faesy/Fisiocomp_Paciente_1
+[submodule "Paciente 2"]
+	path = Paciente 2
+	url = https://github.com/faesy/Fisiocomp_Paciente_2.git
+	branch = main
+[submodule "Paciente 7"]
+	path = Paciente 7
+	url = https://github.com/faesy/Fisiocomp_Paciente_7.git
+	branch = main
+[submodule "Paciente 10"]
+	path = Paciente 10
+	url = https://github.com/faesy/Fisiocomp_Paciente_10.git
+	branch = main
