@@ -1,0 +1,28 @@
+(CenterOfRotationPoint 13.77423095703125 -20.68359375 -24.686745643615723)
+(ComputeZYX "false")
+(Direction 1 0 0 0 1 0 0 0 1)
+(FixedImageDimension 3)
+(FixedInternalImagePixelType "float")
+(HowToCombineTransforms "Compose")
+(Index 0 0 0)
+(InitialTransformParametersFileName "NoInitialTransform")
+(MovingImageDimension 3)
+(MovingInternalImagePixelType "float")
+(NumberOfParameters 6)
+(Origin -160.54217529296875 -173.125 -115.88674926757812)
+(Size 256 224 20)
+(Spacing 1.3671875 1.3671875 9.600000381469727)
+(Transform "EulerTransform")
+(TransformParameters 0.002801293397910445 -0.074491605476464 0.01538222639108811 16.992315200802302 -148.91154315789453 -190.8373662135539)
+(UseDirectionCosines "true")
+
+// ResampleInterpolator specific
+(FinalBSplineInterpolationOrder 3)
+(ResampleInterpolator "FinalBSplineInterpolator")
+
+// Resampler specific
+(CompressResultImage "false")
+(DefaultPixelValue 0)
+(Resampler "DefaultResampler")
+(ResultImageFormat "mhd")
+(ResultImagePixelType "short")

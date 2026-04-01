@@ -1,0 +1,27 @@
+(CenterOfRotationPoint 8.124676760558323 -181.60956628946028 -215.59240096382035)
+(Direction 1 0 0 0 1 0 0 0 1)
+(FixedImageDimension 3)
+(FixedInternalImagePixelType "float")
+(HowToCombineTransforms "Compose")
+(Index 0 0 0)
+(InitialTransformParametersFileName "output_elastix_p2/TransformParameters.0.txt")
+(MovingImageDimension 3)
+(MovingInternalImagePixelType "float")
+(NumberOfParameters 12)
+(Origin -168.2530059814453 -162.52259826660156 -60.356624603271484)
+(Size 256 224 20)
+(Spacing 1.3671875 1.3671875 9.59999942779541)
+(Transform "AffineTransform")
+(TransformParameters 0.7087927109821904 -0.14184055637883458 -0.03917509884607224 0.04538759446422078 1.0462257909196349 -0.031408032079751805 0.021685941330544807 0.23767794555698146 0.839358721622302 3.501849660510235 -7.07695022875899 -8.94408659784745)
+(UseDirectionCosines "true")
+
+// ResampleInterpolator specific
+(FinalBSplineInterpolationOrder 3)
+(ResampleInterpolator "FinalBSplineInterpolator")
+
+// Resampler specific
+(CompressResultImage "false")
+(DefaultPixelValue 0)
+(Resampler "DefaultResampler")
+(ResultImageFormat "mhd")
+(ResultImagePixelType "short")

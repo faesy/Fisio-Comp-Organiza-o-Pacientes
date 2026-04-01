@@ -1,0 +1,97 @@
+// Example parameter file for RIGID registration (CT <-> MRI)
+// Based on your affine file, but using a rigid transform (rotation + translation)
+// C-style comments: //
+
+// =================== Image types ===================
+
+// Internal pixel type for computations
+(FixedInternalImagePixelType "float")
+(MovingInternalImagePixelType "float")
+
+// Use direction cosines (recommended unless your headers are corrupted)
+(UseDirectionCosines "true")
+
+// =================== Main Components ===================
+
+(Registration "MultiResolutionRegistration")
+
+// Interpolator used during optimization
+(Interpolator "BSplineInterpolator")
+
+// Interpolator used for generating the result image
+(ResampleInterpolator "FinalBSplineInterpolator")
+
+(Resampler "DefaultResampler")
+
+// Image pyramids (multi-resolution)
+(FixedImagePyramid "FixedRecursiveImagePyramid")
+(MovingImagePyramid "MovingRecursiveImagePyramid")
+
+// Optimizer + Transform + Metric
+(Optimizer "AdaptiveStochasticGradientDescent")
+
+// RIGID in 3D: rotation + translation
+(Transform "EulerTransform")
+
+// Good default for multi-modality CT<->MRI
+(Metric "AdvancedMattesMutualInformation")
+
+// =================== Transformation settings ===================
+
+// Scale parameters automatically (recommended)
+(AutomaticScalesEstimation "true")
+
+// Initialize by aligning geometric centers (recommended for rigid start)
+(AutomaticTransformInitialization "true")
+
+// Combine transforms between stages (important when chaining -p files)
+(HowToCombineTransforms "Compose")
+
+// =================== Similarity measure ===================
+
+// Histogram bins for MI. Hierarchical over resolutions is often more robust.
+(NumberOfHistogramBins 16 32 64 64)
+
+// If you use mask as ROI, keep false
+(ErodeMask "false")
+
+// =================== Multiresolution ===================
+
+(NumberOfResolutions 4)
+
+// Optional: you can uncomment and tweak if needed
+//(ImagePyramidSchedule 8 8 8  4 4 4  2 2 2  1 1 1)
+
+// =================== Optimizer ===================
+
+// Iterations per resolution
+(MaximumNumberOfIterations 500)
+
+// Optional (usually leave commented)
+//(MaximumStepLength 1.0)
+
+// =================== Image sampling ===================
+
+// More samples => more stable MI (especially CT<->MRI and/or with masks)
+(NumberOfSpatialSamples 12000)
+
+(NewSamplesEveryIteration "true")
+(ImageSampler "Random")
+
+// =================== Interpolation and Resampling ===================
+
+// During optimization (1 = linear-like; stable and fast)
+(BSplineInterpolationOrder 1)
+
+// For final resampling of intensity images
+(FinalBSplineInterpolationOrder 3)
+
+// Default value outside image
+(DefaultPixelValue 0)
+
+// Write result image from this stage
+(WriteResultImage "true")
+
+// Output format/type
+(ResultImagePixelType "short")
+(ResultImageFormat "mhd")
